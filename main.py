@@ -24,10 +24,11 @@ def main(argv):
     if len(argv) <= 1:
         print("Usage: ./main.py <INPUT_PDF>", file=sys.stderr)
         os.exit(1)
+    infile = argv[1]
 
     req_image = []
     final_text = []
-    image_pdf = Image(filename='./files/input.pdf')
+    image_pdf = Image(filename=infile)
     image_jpeg = image_pdf.convert('png')
     for img in image_jpeg.sequence:
         img_page = Image(image=img)
