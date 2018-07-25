@@ -14,6 +14,6 @@ COPY main.py ./
 
 USER myuser
 
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+ENTRYPOINT ["/usr/bin/dumb-init", "--", "/app/main.py"]
 
-CMD ["./main.py"]
+CMD []
