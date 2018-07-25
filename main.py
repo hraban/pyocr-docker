@@ -18,8 +18,8 @@ LANG = 'eng'
 def main(argv):
     tool = pyocr.get_available_tools()[0]
 
-    if 'eng' not in tool.get_available_languages():
-        print("ocr language 'eng' not available", file=sys.stderr)
+    if LANG not in tool.get_available_languages():
+        print("ocr language '%s' not available" % (LANG,), file=sys.stderr)
         os.exit(1)
     if len(argv) <= 1:
         print("Usage: ./main.py <INPUT_PDF>", file=sys.stderr)
